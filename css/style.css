@@ -1,0 +1,138 @@
+/* General Styling */
+@keyframes logoanimation {
+    from{
+        opacity: 0%;
+        width: 25px;
+    }
+    to{
+        opacity: 100%;
+        width: 475px;
+    }
+}
+
+#logo{
+    animation: logoanimation 5s;
+}
+
+body{
+    font-family: 'Poppins', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color:  #f1f1f1;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+a:visited{
+    color: #0000FF;
+}
+.card > header{
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.card {
+    /* No 100% sure we are suppose to use width */
+    flex: 1 1 0;
+    width: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.pricing{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* For screens that are bigger than 900px */
+@media screen and ( min-width: 900px ) {
+    header{
+        display: flex;
+        align-self: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    body > header{
+        position: sticky;
+        top: 0px;
+        z-index: 100;
+    }
+    .nav_links{
+        display: flex;
+    }
+    .pricing{
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        /* Not sure if this correct */
+        /* width: 275px; */
+        flex: 0 0 275px;
+    }
+}
+
+/* For media devices that want reduced motion */
+@media (prefers-reduced-motion) {
+    #logo{
+        animation: none;
+        opacity: 100%;
+        width: 475px;
+    }
+}
+
+/* For print format */
+@media print{
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    header nav{
+        width: 100%;
+    }
+    ul.nav_links{
+        display: flex;
+        justify-content: space-around;
+    }
+    div.pricing{
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    .card li:nth-child(2)::after{
+        content: '\1F44D';
+    }
+    #gallery, .gallery{
+        display: none;
+    }
+    
+}
