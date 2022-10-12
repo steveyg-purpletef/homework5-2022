@@ -101,7 +101,7 @@ a:visited{
 }
 
 /* Styling for media devices that want reduced motion */
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
     #logo{
         animation: none;
         opacity: 100%;
